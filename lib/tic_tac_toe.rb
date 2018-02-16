@@ -87,4 +87,12 @@ def won?
   end
 end
 
+def full?
+  if @board.any? { |e| e == '' || e == ' ' || e == nil }
+    return false
+  else
+    return true
+  end
+end
+
 end
