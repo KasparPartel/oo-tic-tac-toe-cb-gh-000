@@ -30,4 +30,8 @@ def move(index, data)
   @board[index] = data
 end
 
+def position_taken?(index)
+  !(@board[index].nil? || @board[index] == " ")
+end
+
 end
