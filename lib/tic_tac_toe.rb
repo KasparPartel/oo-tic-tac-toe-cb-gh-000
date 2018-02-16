@@ -103,4 +103,35 @@ def draw?
   end
 end
 
+def over?
+  if won? || full? || draw?
+    return true
+  else
+    return false
+  end
+end
+
+def winner
+  if won?
+    won_token = won?
+    return @board[won_token[0]]
+  else
+    return nil
+  end
+end
+
+def play
+  until over? do
+    turn
+  end
+
+  if winner == 'X'
+    puts 'Congratulations X!'
+  elsif winner == 'O'
+    puts 'Congratulations O!'
+  elsif draw?
+    puts "Cat's Game!"
+  end
+end
+
 end
