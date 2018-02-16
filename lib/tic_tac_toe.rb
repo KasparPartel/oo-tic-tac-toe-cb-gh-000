@@ -34,4 +34,16 @@ def position_taken?(index)
   !(@board[index].nil? || @board[index] == " ")
 end
 
+def valid_move?(index)
+  if index >= 0
+    if @board[index] && !position_taken?(index)
+      return true
+    else
+      return false
+    end
+  else
+    return false
+  end
+end
+
 end
